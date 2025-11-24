@@ -2,7 +2,7 @@
   "name": "macroscript-intellipack",
   "displayName": "MacroScript IntelliPack",
   "description": "VS Code extension that adds syntax highlighting, structure awareness, and essential editing tools for MacroScript, the custom language used to build advanced Minecraft macros and automation workflows.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.106.1"
   },
@@ -10,16 +10,25 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "macro",
-      "aliases": ["Macro Script", "macro"],
-      "extensions": [".txt"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "macro",
-      "scopeName": "source.macro",
-      "path": "./syntaxes/macro.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "macro",
+        "aliases": [
+          "Macro Script",
+          "macro"
+        ],
+        "extensions": [
+          ".txt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "macro",
+        "scopeName": "source.macro",
+        "path": "./syntaxes/macro.tmLanguage.json"
+      }
+    ]
   }
 }
