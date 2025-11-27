@@ -9,7 +9,9 @@ import { waitDoc } from './actions/wait';
 export type Lang = 'en' | 'pt';
 
 export const actionsDocs: Record<string, IActionDoc> = {
+    gui: guiDoc,
+    log: logDoc,
+    stop: stopDoc,
+    wait: waitDoc,
 
-
-}    // Adicione o resto aqui...
-    ;
+};
