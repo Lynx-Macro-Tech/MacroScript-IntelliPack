@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { functionDocs, FunctionDoc, Lang } from './docs/functions';
-
+import { actionsDocs, Lang } from './docs/actions';
+import { IActionDoc } from './docs/interfaces/IActionDoc'
 
 
 function getCurrentLang(): Lang {
@@ -13,7 +13,7 @@ function getCurrentLang(): Lang {
     return vscode.env.language.startsWith('pt') ? 'pt' : 'en';
 }
 
-function getDocText(doc: FunctionDoc, lang: Lang): string {
+function getDocText(doc: IActionDoc, lang: Lang): string {
     return lang === 'pt' ? doc.pt : doc.en;
 }
 
@@ -28,7 +28,7 @@ export function activate(context: vscode.ExtensionContext) {
                 const items: vscode.CompletionItem[] = [];
                 const lang = getCurrentLang();
 
-                for (const [name, info] of Object.entries(functionDocs)) {
+                for (const [name, info] of Object.entries(actionsDocs)) {
                     const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Function);
                     item.detail = info.signature;
 
@@ -64,7 +64,7 @@ export function activate(context: vscode.ExtensionContext) {
                 if (!range) return;
 
                 const word = document.getText(range);
-                const info = functionDocs[word];
+                const info = actionsDocs[word];
                 if (!info) return;
 
                 const lang = getCurrentLang();
