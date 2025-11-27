@@ -70,7 +70,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.conditional.macro",
-					"match": "\\b(if|elseif|else|endif)\\b"
+					"match": "\\b(if|elseif|else|endif|ifmatches)\\b"
 				},
 				{
 					"name": "keyword.control.flow.macro",
@@ -90,7 +90,7 @@
 			"patterns": [
 				{
 					"name": "support.function.command.macro",
-					"match": "\\b(LOG|log|echo|prompt|set|unset|inc|dec|toggle|stop|wait|key|keydown|keyup|look|pick|gui|unsafe|endunsafe|slotclick|getslotitem|getslot|getidrel|achievementget|clearchat)\\b"
+					"match": "\\b(log|echo|prompt|set|unset|inc|dec|toggle|stop|wait|key|keydown|keyup|look|pick|gui|unsafe|endunsafe|slotclick|getslotitem|getslot|getidrel|achievementget|clearchat)\\b"
 				}
 			]
 		},
@@ -114,7 +114,7 @@
 			"patterns": [
 				{
 					"name": "constant.language.builtin.macro",
-					"match": "\\b(XPOS|YPOS|ZPOS|YAW|PITCH|ITEM|DURABILITY|HITID|HIT|GUI|INVSLOT)\\b"
+					"match": "\\b(XPOS|YPOS|ZPOS|YAW|PITCH|ITEM|DURABILITY|HITID|HIT|GUI|INVSLOT|CHAT)\\b"
 				}
 			]
 		},
