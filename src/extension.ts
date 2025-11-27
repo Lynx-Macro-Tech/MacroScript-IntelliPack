@@ -32,9 +32,10 @@ export function activate(context: vscode.ExtensionContext) {
                     const item = new vscode.CompletionItem(name, vscode.CompletionItemKind.Function);
                     item.detail = info.signature;
 
-                    const md = new vscode.MarkdownString();
+                    const md = new vscode.MarkdownString(undefined, true);
+                    md.supportHtml = true;
                     md.appendCodeblock(info.signature, "macro");
-                    md.appendMarkdown("\n\n" + getDocText(info, lang));
+                    md.appendMarkdown("\n\n" + getDocText(info, lang).replace(/\n/g, "\n\n"));
 
                     if (info.example) {
                         if (lang === 'pt') {
@@ -67,10 +68,11 @@ export function activate(context: vscode.ExtensionContext) {
                 if (!info) return;
 
                 const lang = getCurrentLang();
-                const md = new vscode.MarkdownString();
+                const md = new vscode.MarkdownString(undefined, true);
 
+                md.supportHtml = true;
                 md.appendCodeblock(info.signature, "macro");
-                md.appendMarkdown("\n\n" + getDocText(info, lang));
+                md.appendMarkdown("\n\n" + getDocText(info, lang).replace(/\n/g, "\n\n"));
 
                 if (info.example) {
                     md.appendMarkdown("\n\n**Example / Exemplo:**\n");
